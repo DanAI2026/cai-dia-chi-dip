@@ -15,7 +15,9 @@ Quy tắc lấy theo tài liệu hãng: Horing mục 8 "Addressable Point Number
 
 ## Cách cài vào điện thoại
 
-Mở trang công cụ bằng điện thoại (đường link ở mục "About" của kho này).
+**Android, cài thẳng, không cần mạng:** tải file [Dia-chi-DIP.apk](https://github.com/DanAI2026/cai-dia-chi-dip/releases/latest/download/Dia-chi-DIP.apk), bấm mở file, cho phép "Cài ứng dụng không rõ nguồn gốc" khi máy hỏi. File nhỏ, gửi qua Zalo được.
+
+**Hoặc dùng trang web:** mở trang công cụ bằng điện thoại (đường link ở mục "About" của kho này).
 
 - **Android:** mở bằng Chrome, bấm dấu ba chấm góc phải, chọn "Cài đặt ứng dụng" hoặc "Thêm vào màn hình chính".
 - **iPhone:** mở bằng Safari, bấm nút Chia sẻ, chọn "Thêm vào MH chính".
