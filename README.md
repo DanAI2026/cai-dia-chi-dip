@@ -24,6 +24,20 @@ Quy tắc lấy theo tài liệu hãng: Horing mục 8 "Addressable Point Number
 
 Sau lần mở đầu tiên, công cụ dùng được cả khi không có mạng.
 
+## Không cài được file APK
+
+File đã được kiểm tra cài và chạy tốt trên Android 14. Nếu máy không cho cài, thường do cài đặt chặn của điện thoại:
+
+| Máy báo | Cách xử lý |
+|---|---|
+| "Điện thoại không được phép cài ứng dụng không rõ nguồn gốc từ nguồn này" | Bấm **Cài đặt**, bật **Cho phép từ nguồn này**, bấm quay lại rồi bấm **Cài đặt**. |
+| Samsung báo bị **Trình chặn tự động** (Auto Blocker) chặn | Vào **Cài đặt > Bảo mật và quyền riêng tư > Trình chặn tự động**, tắt tạm. Cài xong bật lại. |
+| **Play Protect** báo "Ứng dụng chưa được kiểm tra" hoặc "Đã chặn" | Bấm **Thông tin chi tiết** hoặc **Chi tiết khác**, chọn **Vẫn cài đặt**. |
+| "Ứng dụng chưa được cài đặt" hoặc "Xung đột với gói hiện có" | Gỡ bản "Địa chỉ DIP" cũ (nếu có) rồi cài lại. |
+| Bấm file trong Zalo mà không có gì xảy ra | Trong Zalo bấm giữ file, chọn **Lưu về máy**. Mở ứng dụng **Tệp** hoặc **File của bạn**, vào **Tải xuống**, bấm vào file. |
+
+Nếu vẫn không được, dùng trang web: mở link bằng Chrome, chọn "Thêm vào màn hình chính". Cách này cũng dùng được khi không có mạng.
+
 ## Lưu ý
 
 Luôn đối chiếu với nhãn trên thiết bị và chương trình tủ trước khi lắp. Công cụ chỉ hỗ trợ tra cứu, không thay cho tài liệu của hãng.
