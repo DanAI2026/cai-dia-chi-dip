@@ -3,17 +3,18 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Công cụ đổi số địa chỉ ra vị trí gạt công tắc DIP cho thiết bị báo cháy Horing và card Simplex 4100ES.">
+<meta name="description" content="Đổi số địa chỉ ra vị trí gạt công tắc DIP cho thiết bị báo cháy Horing và card Simplex 4100ES.">
 <link rel="manifest" href="manifest.webmanifest">
-<link rel="icon" href="icon-192.png" type="image/png">
+<link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
 <link rel="apple-touch-icon" href="icon-180.png">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="Địa chỉ DIP">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="theme-color" content="#1d2328">
 <style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 <title>Cài địa chỉ DIP</title>
 <meta name="claude:viewport-fit-sides" content="cover">
-<meta name="theme-color" content="#1d2328">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Be+Vietnam+Pro:wght@400;500;600&family=JetBrains+Mono:wght@500;700&display=swap">
 <style>
@@ -106,6 +107,12 @@ tbody tr.cur{background:var(--accent);color:var(--accent-ink)}
 details{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:12px 16px}
 summary{cursor:pointer;font-weight:600}
 details ol{margin:8px 0 0;padding-left:20px;display:flex;flex-direction:column;gap:4px}
+.install{display:flex;gap:10px;align-items:center;justify-content:space-between;background:var(--panel);border:2px solid var(--accent);border-radius:12px;padding:10px 12px;font-size:14px;font-weight:500}
+.install span{min-width:0}
+.install-b{appearance:none;border:none;background:var(--accent);color:var(--accent-ink);font:inherit;font-weight:700;font-size:16px;height:42px;padding:0 22px;border-radius:10px;cursor:pointer;flex:none}
+.install-b[hidden]{display:none}
+.offline{display:inline-block;margin-top:6px;font-weight:600}
+.offline.ok{color:var(--ok)}
 a.apk{display:inline-block;background:var(--accent);color:var(--accent-ink);font-weight:600;text-decoration:none;padding:10px 14px;border-radius:10px;margin-bottom:6px}
 footer{font-size:12px;color:var(--muted);text-align:center}
 @media (prefers-reduced-motion: reduce){.knob{transition:none}}
@@ -122,6 +129,8 @@ footer{font-size:12px;color:var(--muted);text-align:center}
       <p class="sub">Đổi số địa chỉ ra vị trí gạt công tắc, hoặc ngược lại.</p>
     </div>
   </header>
+
+  <div class="install" id="install" hidden><span id="install-t">Cài "Địa chỉ DIP" lên màn hình chính để mở nhanh và dùng không cần mạng.</span><button class="install-b" id="install-b" type="button">Cài</button></div>
 
   <div class="brands" role="group" aria-label="Chọn hãng thiết bị">
     <button class="brand" id="b-horing" data-brand="horing" aria-pressed="true">
@@ -169,12 +178,13 @@ footer{font-size:12px;color:var(--muted);text-align:center}
 
   <details>
     <summary>Cài vào điện thoại, dùng không cần mạng</summary>
-    <p class="note" style="margin:10px 0 0"><a class="apk" href="https://github.com/DanAI2026/cai-dia-chi-dip/releases/latest/download/Dia-chi-DIP.apk">Tải file cài Android (.apk)</a><br>Tải về, bấm mở file, cho phép "Cài ứng dụng không rõ nguồn gốc" khi máy hỏi. Cài xong dùng được hoàn toàn không cần mạng.</p>
     <ol>
-      <li><b>Android (cách khác):</b> mở trang bằng Chrome, bấm dấu ba chấm góc phải, chọn "Thêm vào màn hình chính".</li>
-      <li><b>iPhone:</b> mở trang bằng Safari, bấm nút Chia sẻ, chọn "Thêm vào MH chính".</li>
-      <li>Biểu tượng hiện ra trên màn hình như một ứng dụng. Gửi đường link cho anh em để cài giống vậy.</li>
+      <li><b>Android:</b> mở link bằng Chrome, bấm nút <b>Cài</b> ở đầu trang. Không thấy nút thì bấm dấu ba chấm, chọn "Cài đặt ứng dụng" hoặc "Thêm vào màn hình chính".</li>
+      <li><b>iPhone:</b> mở link bằng Safari, bấm nút Chia sẻ, chọn "Thêm vào MH chính", rồi bấm "Thêm".</li>
+      <li>Đang mở trong Zalo hoặc Facebook thì không cài được. Chọn "Mở bằng trình duyệt" trước.</li>
+      <li>Mở app 1 lần khi có mạng, sau đó dùng được ở chỗ mất sóng.</li>
     </ol>
+    <p class="note" style="margin:10px 0 0">Cách dự phòng cho Android: <a href="https://github.com/DanAI2026/cai-dia-chi-dip/releases/latest/download/Dia-chi-DIP.apk">tải file cài .apk</a>. Máy có thể hỏi cho phép cài ứng dụng không rõ nguồn gốc.</p>
   </details>
 
   <footer>Theo tài liệu hãng: Horing mục 8 trang 27–28; Simplex 4100ES Phụ lục A, Bảng A-1.<br>Luôn đối chiếu với nhãn trên thiết bị và chương trình tủ trước khi lắp.<br>Công ty TNHH Công Nghệ UTC</footer>
@@ -273,11 +283,46 @@ footer{font-size:12px;color:var(--muted);text-align:center}
     if(tr){setAddr(v);tr.scrollIntoView({block:'nearest'})}
   });
   setBrand(brand);
+
+  // Thanh cài ứng dụng: chỉ ở bản trang web có manifest, khi chưa cài
+  if (document.querySelector('link[rel="manifest"]') && !matchMedia('(display-mode: standalone)').matches && !navigator.standalone) {
+    var ev = null, box = $('install'), txt = $('install-t'), btn = $('install-b');
+    window.addEventListener('beforeinstallprompt', function(e){ e.preventDefault(); ev = e; btn.hidden = false; box.hidden = false; });
+    btn.addEventListener('click', function(){
+      if (!ev) return;
+      ev.prompt();
+      Promise.resolve(ev.userChoice).catch(function(){}).then(function(){ ev = null; box.hidden = true; });
+    });
+    window.addEventListener('appinstalled', function(){ box.hidden = true; });
+    var ua = navigator.userAgent;
+    var ios = /iphone|ipad|ipod/i.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1);
+    var inApp = /Zalo|FBAN|FBAV|FB_IAB|Instagram|Line\/|Messenger/i.test(ua);
+    if (inApp) {
+      txt.textContent = ios
+        ? 'Đang mở trong Zalo/Facebook nên không cài được. Bấm nút ⋯ hoặc biểu tượng la bàn, chọn "Mở bằng Safari", rồi cài từ Safari.'
+        : 'Đang mở trong Zalo/Facebook nên không cài được. Bấm ⋮ ở góc trên, chọn "Mở bằng trình duyệt" (Chrome), rồi cài từ Chrome.';
+      btn.hidden = true; box.hidden = false;
+    } else if (ios) {
+      txt.textContent = /CriOS|FxiOS|EdgiOS/.test(ua)
+        ? 'Cài lên iPhone: bấm nút Chia sẻ, chọn "Thêm vào MH chính". Nếu không thấy mục này, mở link bằng Safari.'
+        : 'Cài lên iPhone: bấm nút Chia sẻ (ô vuông có mũi tên lên) ở thanh dưới Safari, kéo xuống chọn "Thêm vào MH chính", rồi bấm "Thêm".';
+      btn.hidden = true; box.hidden = false;
+    }
+  }
+
+  // Báo cho thợ biết app đã lưu về máy, dùng được khi mất mạng
+  if ('serviceWorker' in navigator && document.querySelector('link[rel="manifest"]')) {
+    var foot = document.querySelector('footer'), tag = document.createElement('span');
+    tag.className = 'offline'; foot.appendChild(document.createElement('br')); foot.appendChild(tag);
+    var say = function(t, ok){ tag.textContent = t; tag.classList.toggle('ok', !!ok); };
+    say('Đang lưu app về máy...');
+    navigator.serviceWorker.register('sw.js').then(function(){ return navigator.serviceWorker.ready; })
+      .then(function(){ say(navigator.onLine ? 'Đã lưu về máy, dùng được khi mất mạng.' : 'Đang dùng không có mạng (bản đã lưu trên máy).', true); })
+      .catch(function(){ say('Chưa lưu được về máy. Mở lại khi có mạng.'); });
+    window.addEventListener('offline', function(){ say('Đang dùng không có mạng (bản đã lưu trên máy).', true); });
+  }
 })();
 </script>
 
-<script>
-if('serviceWorker' in navigator){window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){})})}
-</script>
 </body>
 </html>
